@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class ArrayListTest {
     
-    public void test(){
+    public static void test(){
         ArrayList<String> list = new ArrayList<>();
         list.add("test");
         list.add("test2");

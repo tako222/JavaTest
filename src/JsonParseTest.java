@@ -1,7 +1,5 @@
 import java.io.IOException;
 import java.util.List;
- 
-
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -14,7 +12,12 @@ import com.google.api.client.util.Key;
  
 public class JsonParseTest {
 
-    public void test() {
+    public static void test(){
+        JsonObject jo = getWeatherResult();
+        System.out.println(jo);
+    }
+    
+    private static JsonObject getWeatherResult() {
  
         ApacheHttpTransport transport = new ApacheHttpTransport();
         HttpRequestFactory factory = transport
@@ -31,10 +34,11 @@ public class JsonParseTest {
             HttpRequest request = factory.buildGetRequest(new GenericUrl(url));
             HttpResponse response = request.execute();
             JsonObject json = response.parseAs(JsonObject.class);
-            
+            return json;
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
  
     public static class JsonObject {
@@ -44,6 +48,15 @@ public class JsonParseTest {
         public static class PinpointLocations {
             @Key public String link;
             @Key public String name;
+        }
+        
+        @Override
+        public String toString() {
+            StringBuilder temp = new StringBuilder();
+            for (PinpointLocations pl : this.pinpointLocations) {
+                temp.append("[link=").append(pl.link).append(", name=").append(pl.name).append("]\n");
+            }
+            return temp.toString();
         }
     }
 }
