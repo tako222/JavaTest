@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.api.client.util.Key;
 
 public class LocalJsonParseTest {
     public static void test() {
@@ -23,7 +24,9 @@ public class LocalJsonParseTest {
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Test {
+    @Key
     public int id;
+    @Key
     public String name;
 
     @Override
