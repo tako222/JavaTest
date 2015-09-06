@@ -1,3 +1,5 @@
+package enumerate;
+
 
 public class UseEnumTest {
     public static void test() {

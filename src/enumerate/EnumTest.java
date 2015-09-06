@@ -1,4 +1,5 @@
-public enum EnumTest {
+package enumerate;
+enum EnumTest {
     A("A") {
         @Override
         public Base newInstance() {

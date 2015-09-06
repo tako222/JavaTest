@@ -1,9 +1,7 @@
+import enumerate.UseEnumTest;
 
-public class StreamTest {
+public class MainTest {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         UseEnumTest.test();
     }
