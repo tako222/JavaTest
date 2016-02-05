@@ -1,47 +1,47 @@
 package java8;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
-
 
 public class Java8Test {
 
     public static void test() {
         List<String> list = Arrays.asList("list1", "list2", "list3", "list4",
                 "list5");
-    
-        // StreamƒCƒ“ƒXƒ^ƒ“ƒX‚Ì¶¬
+
+        // Streamã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿæˆ
         Stream<String> stream1 = list.stream();
-    
+
         Stream<String> stream2 = stream1.map(String::toUpperCase);
-    
+
         stream2.forEach(System.out::println);
     }
 
     public static void test2() {
         Integer[] array = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5 };
-    
-        System.out.println("‚»‚Ì‚Ü‚Ü•\¦");
+
+        System.out.println("ãã®ã¾ã¾è¡¨ç¤º");
         Arrays.stream(array).forEach(System.out::println);
-    
-        System.out.println("----- filterƒƒ\ƒbƒh -----");
+
+        System.out.println("----- filterãƒ¡ã‚½ãƒƒãƒ‰ -----");
         Stream<Integer> stream1 = Arrays.stream(array);
-        // —v‘f‚ğ‹ô”‚Ì‚İ‚Éi‚è‚Ü‚·
+        // è¦ç´ ã‚’å¶æ•°ã®ã¿ã«çµã‚Šã¾ã™
         Stream<Integer> filterStream = stream1.filter(value -> value % 2 == 0);
-        filterStream.forEach(value -> System.out.println("filterStream: "
-                + value));
-        System.out.println("----- limitƒƒ\ƒbƒh -----");
+        filterStream
+                .forEach(value -> System.out.println("filterStream: " + value));
+        System.out.println("----- limitãƒ¡ã‚½ãƒƒãƒ‰ -----");
         Stream<Integer> stream2 = Arrays.stream(array);
-        // —v‘f‚ğÅ‰‚©‚ç3—v‘f‚Ü‚Å‚Éi‚è‚Ü‚·
+        // è¦ç´ ã‚’æœ€åˆã‹ã‚‰3è¦ç´ ã¾ã§ã«çµã‚Šã¾ã™
         Stream<Integer> limitStream = stream2.limit(3);
-        limitStream.forEach(value -> System.out
-                .println("limitStream: " + value));
-        System.out.println("----- distinctƒƒ\ƒbƒh -----");
+        limitStream
+                .forEach(value -> System.out.println("limitStream: " + value));
+        System.out.println("----- distinctãƒ¡ã‚½ãƒƒãƒ‰ -----");
         Stream<Integer> stream3 = Arrays.stream(array);
-        // —v‘f‚Ìd•¡‚ğ‚È‚­‚µ‚Ü‚·
+        // è¦ç´ ã®é‡è¤‡ã‚’ãªãã—ã¾ã™
         Stream<Integer> distinctStream = stream3.distinct();
-        distinctStream.forEach(value -> System.out.println("distinctStream: "
-                + value));
+        distinctStream.forEach(
+                value -> System.out.println("distinctStream: " + value));
     }
 
 }
