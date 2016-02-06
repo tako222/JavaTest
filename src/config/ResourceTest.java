@@ -1,5 +1,7 @@
 package config;
 
+import util.ResourceUtils;
+
 public class ResourceTest {
     public static void test() {
         System.out.println(ResourceUtils.RESOURCE.getString("test"));
