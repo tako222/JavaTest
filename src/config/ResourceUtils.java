@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.apache.commons.lang3.StringUtils;
+
 public enum ResourceUtils {
     RESOURCE("src/config/ApplicationResources.properties"),;
 
@@ -43,7 +45,7 @@ public enum ResourceUtils {
         String value = getString(key);
         for (int i = 0; i < params.length; i++) {
             final String param = getString(params[i]);
-            if (param == null) {
+            if (StringUtils.isEmpty(param)) {
                 value = value.replace("{" + i + "}", params[i]);
             } else {
                 value = value.replace("{" + i + "}", param);
