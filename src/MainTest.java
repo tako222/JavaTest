@@ -1,8 +1,8 @@
-import config.ResourceTest;
+import sql.SqlStringUtils;
 
 public class MainTest {
 
     public static void main(String[] args) {
-        ResourceTest.test();
+        SqlStringUtils.test();
     }
 }
