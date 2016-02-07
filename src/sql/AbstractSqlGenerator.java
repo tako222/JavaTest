@@ -8,6 +8,9 @@ public class AbstractSqlGenerator {
     /** テーブルのエイリアス名 */
     protected final String alias;
 
+    protected static String OR = " OR ";
+    protected static String AND = " AND ";
+
     public AbstractSqlGenerator(String table, String alias) {
         this.table = table;
         this.alias = alias;

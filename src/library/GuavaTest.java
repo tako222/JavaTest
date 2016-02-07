@@ -7,7 +7,7 @@ import com.google.common.primitives.Ints;
 
 public class GuavaTest {
     public static void test() {
-        
+
     }
 
     private static void intUtility() {
@@ -18,7 +18,7 @@ public class GuavaTest {
     }
 
     /**
-     * null‚Ì—v‘f‚ğ–³‹‚µ‚Äjoin
+     * nullç„¡è¦–join
      */
     private static void joiner() {
         String[] arrayString = new String[] { "a", null, "b", null, "c" };
@@ -30,7 +30,7 @@ public class GuavaTest {
     }
 
     /**
-     * ArrayList‚Å”z—ñ‚Á‚Û‚­‰Šú‰»
+     * ArrayListåˆæœŸåŒ–
      */
     private static void initArrayList() {
         List<String> list = Lists.newArrayList("a", "b", "c");
